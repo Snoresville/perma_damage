@@ -11,7 +11,7 @@ local bonusabilities = {
 }
 local bonusmodifier = {
 	-- examplemodifier = {duration = 3}, -- this adds a duration to the modifier.
-	-- examplemodifier = {},  -- this makes it so that its permanent
+	eclipse8 = {},  -- this makes it so that its permanent
 }
 local talents = {
 	[8] = "",	[7] = "",
@@ -23,6 +23,12 @@ local talents = {
 
 ListenToGameEvent("npc_first_spawn",function(kv)
 	local hero = EntIndexToHScript(kv.entindex)
+
+	-- Modifiers
+
+	for name,data in pairs(bonusmodifier) do
+		hero:AddNewModifierButt(hero, nil, name, data)
+	end
 
 
 	if (not hero:IsHero()) then return end
@@ -55,11 +61,7 @@ ListenToGameEvent("npc_first_spawn",function(kv)
 		return nil
 	end)
 
-	-- Modifiers
-
-	for name,data in pairs(bonusmodifier) do
-		hero:AddNewModifierButt(hero, nil, name, data)
-	end
+	
 
 	-- Talents
 
