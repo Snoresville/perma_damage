@@ -48,7 +48,7 @@ BUTTINGS = {
 	BUYBACK_LIMIT = 1,                  -- Max amount of buybacks
 	BUYBACK_COOLDOWN = 600,             -- Cooldown for buyback
 
-	PCT_DAMAGE_PERMANENT = 25
+	PCT_DAMAGE_PERMANENT = 50
 }
 
 function BUTTINGS.ALTERNATIVE_XP_TABLE()	-- xp values if MAX_LEVEL is different than 30
